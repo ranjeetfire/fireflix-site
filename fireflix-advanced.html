@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FireFlix - Streaming Hot</title>
+  <style>
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #111; color: #fff; }
+    header { background-color: #222; padding: 20px; text-align: center; }
+    header img { height: 50px; vertical-align: middle; }
+    header h1 { color: #ff3c3c; margin: 0; display: inline-block; margin-left: 10px; vertical-align: middle; }
+    .lang-toggle {
+      position: absolute; top: 10px; right: 10px;
+      background-color: #ff3c3c; color: white; border: none;
+      padding: 8px 12px; cursor: pointer; border-radius: 5px;
+    }
+    nav { background-color: #333; padding: 10px; display: flex; justify-content: center; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; margin: 0 15px; }
+    .hero { background: url('https://via.placeholder.com/1200x400?text=FireFlix+Originals') no-repeat center center/cover; padding: 100px 20px; text-align: center; }
+    .hero h2 { color: #ffcc00; font-size: 2.5em; }
+    .section { padding: 40px 20px; }
+    .grid { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    .card { background-color: #222; padding: 15px; border-radius: 8px; width: 300px; }
+    .card img { width: 100%; border-radius: 8px; }
+    .card h3 { margin-top: 10px; color: #ffcc00; }
+    footer { background-color: #222; padding: 20px; text-align: center; color: #888; }
+    .whatsapp-button {
+      position: fixed; bottom: 20px; right: 20px;
+      background-color: #25D366; color: white;
+      border: none; border-radius: 50%;
+      width: 50px; height: 50px;
+      font-size: 24px; text-align: center;
+      line-height: 50px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-toggle" onclick="toggleLanguage()">हिंदी</button>
+  <a class="whatsapp-button" href="https://wa.me/919999999999" target="_blank">W</a>
+  <header>
+    <img src="https://via.placeholder.com/50x50?text=F" alt="Logo" />
+    <h1>FireFlix</h1>
+    <p id="tagline">Streaming Hot | Bold Stories, Real Emotions</p>
+  </header>
+  <nav>
+    <a href="#home" id="navHome">Home</a>
+    <a href="#series" id="navSeries">Series</a>
+    <a href="#about" id="navAbout">About</a>
+    <a href="#subscribe" id="navSubscribe">Subscribe</a>
+  </nav>
+  <div class="hero">
+    <h2 id="heroTitle">Watch Bold Stories Now</h2>
+    <p id="heroSub">Exclusive Premium Shows for 18+ Viewers</p>
+  </div>
+  <section class="section" id="series">
+    <h2 style="text-align:center; color:#ff3c3c;" id="featured">Featured Series</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/300x170?text=Series+1" alt="Series 1" />
+        <h3 id="series1Title">Dreams of Mumbai</h3>
+        <p id="series1Desc">A young man in the city of dreams finds more than just a job.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x170?text=Series+2" alt="Series 2" />
+        <h3 id="series2Title">Flat No. 9</h3>
+        <p id="series2Desc">What happens behind the doors of Flat 9?</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/300x170?text=Series+3" alt="Series 3" />
+        <h3 id="series3Title">Kahani PG Wali</h3>
+        <p id="series3Desc">A PG girl and her secret nights of adventure.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 FireFlix. All rights reserved.</p>
+  </footer>
+  <script>
+    let isHindi = false;
+    function toggleLanguage() {
+      isHindi = !isHindi;
+      document.querySelector('.lang-toggle').innerText = isHindi ? 'English' : 'हिंदी';
+      document.getElementById('tagline').innerText = isHindi ? 'हॉट स्टोरीज़ | असली इमोशन्स' : 'Streaming Hot | Bold Stories, Real Emotions';
+      document.getElementById('heroTitle').innerText = isHindi ? 'अब बोल्ड स्टोरीज़ देखें' : 'Watch Bold Stories Now';
+      document.getElementById('heroSub').innerText = isHindi ? '18+ दर्शकों के लिए विशेष शो' : 'Exclusive Premium Shows for 18+ Viewers';
+      document.getElementById('featured').innerText = isHindi ? 'फीचर्ड सीरीज' : 'Featured Series';
+      document.getElementById('navHome').innerText = isHindi ? 'होम' : 'Home';
+      document.getElementById('navSeries').innerText = isHindi ? 'सीरीज' : 'Series';
+      document.getElementById('navAbout').innerText = isHindi ? 'जानकारी' : 'About';
+      document.getElementById('navSubscribe').innerText = isHindi ? 'सब्सक्राइब करें' : 'Subscribe';
+      document.getElementById('series1Title').innerText = isHindi ? 'मुंबई के सपने' : 'Dreams of Mumbai';
+      document.getElementById('series1Desc').innerText = isHindi ? 'सपनों के शहर में एक युवक को सिर्फ नौकरी ही नहीं मिलती।' : 'A young man in the city of dreams finds more than just a job.';
+      document.getElementById('series2Title').innerText = isHindi ? 'फ्लैट नं. 9' : 'Flat No. 9';
+      document.getElementById('series2Desc').innerText = isHindi ? 'फ्लैट नं. 9 के दरवाज़ों के पीछे क्या होता है?' : 'What happens behind the doors of Flat 9?';
+      document.getElementById('series3Title').innerText = isHindi ? 'कहानी पीजी वाली' : 'Kahani PG Wali';
+      document.getElementById('series3Desc').innerText = isHindi ? 'PG में रहने वाली लड़की और उसकी रातें।' : 'A PG girl and her secret nights of adventure.';
+    }
+  </script>
+</body>
+</html>
